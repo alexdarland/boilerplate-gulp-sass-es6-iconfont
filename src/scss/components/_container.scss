@@ -1,0 +1,19 @@
+.container {
+  max-width: 1190px;
+  margin: 0 auto;
+  padding: 0 30px;
+
+  &__wrap {
+    float: left;
+    width: 100%;
+    background: #ebebeb;
+  }
+
+  &__section {
+    margin: 60px 0;
+
+    @include respond-to(xxs-only) {
+      margin: 30px 0;
+    }
+  }
+}

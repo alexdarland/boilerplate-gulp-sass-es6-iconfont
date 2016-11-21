@@ -1,0 +1,57 @@
+@font-face {
+  font-family: "<%= fontName %>";
+  src: url('<%= fontPath %><%= fontName %>.eot'); /* IE9 Compat Modes */
+  src: url('<%= fontPath %><%= fontName %>.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('<%= fontPath %><%= fontName %>.woff2') format('woff2'), /* Super Modern Browsers */
+  url('<%= fontPath %><%= fontName %>.woff') format('woff'), /* Pretty Modern Browsers */
+  url('<%= fontPath %><%= fontName %>.ttf')  format('truetype'), /* Safari, Android, iOS */
+  url('<%= fontPath %><%= fontName %>.svg#svgFontName') format('svg'); /* Legacy iOS */
+}
+
+<% _.each(glyphs, function(glyph) { %>$<%= cssClass%>-char-<%= glyph.fileName %>: "\<%= glyph.codePoint %>";
+<% }); %>
+.<%= cssClass%> {
+
+  &:after,
+  &:before {
+    font-family: "<%= fontName %>";
+    color: inherit;
+    display: inline-block;
+    font-style: normal;
+    font-size: inherit;
+    line-height: 1;
+  }
+
+  &--inline:after {
+    vertical-align: middle;
+    margin-top: -.18em;
+  }
+
+  &--after:after {
+    @extend .icon--inline;
+    padding-left: .5em;
+  }
+
+  &--before:before {
+    @extend .icon--inline;
+    padding-right: .5em;
+  }
+
+  <% _.each(glyphs, function(glyph) { %>&--<%= glyph.fileName %> {
+    &:after {
+      content: $<%= cssClass%>-char-<%= glyph.fileName %>;
+    }
+    &.<%= cssClass%>--before {
+      &:after {
+      content: none;
+    }
+    &:before {
+      content: $<%= cssClass%>-char-<%= glyph.fileName %>;
+    }
+    }
+  }
+
+  <% }); %>
+}
+
+

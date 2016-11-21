@@ -1,0 +1,92 @@
+* {
+  // @include box-sizing(border-box);
+  box-sizing: border-box;
+}
+*:before,
+*:after {
+  // @include box-sizing(border-box);
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+body {
+  font-family: $font-family-base;
+  font-size: $font-size-base;
+  // line-height: $line-height-base;
+  color: $text-color;
+  background-color: $bg-color;
+}
+
+input,
+button,
+select,
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+body,
+input,
+textarea,
+select,
+button {
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  // color: $link-color;
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    // color: $link-hover-color;
+    // text-decoration: $link-hover-decoration;
+    text-decoration: underline;
+  }
+
+  &:focus {
+    // @include tab-focus;
+  }
+}
+
+figure {
+  margin: 0;
+}
+
+img {
+  vertical-align: middle;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  border: 0;
+}
+
+.sr-only-focusable {
+  &:active,
+  &:focus {
+    position: static;
+    width: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    clip: auto;
+  }
+}
+
+[role="button"] {
+  cursor: pointer;
+}
