@@ -3,3 +3,4 @@ node_modules
 dist
 src/scss/base/_icons.scss
 src/fonts/icons
+InlineSvg.cshtml

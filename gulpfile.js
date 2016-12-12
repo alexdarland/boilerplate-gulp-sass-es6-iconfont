@@ -9,8 +9,15 @@ require('./gulp/tasks/clean')(gulp)
 require('./gulp/tasks/copy')(gulp)
 require('./gulp/tasks/sass')(gulp)
 require('./gulp/tasks/scripts')(gulp)
-require('./gulp/tasks/iconfont')(gulp)
+require('./gulp/tasks/inlinesvg')(gulp)
 
-gulp.task('watch:all', ['copy:watch', 'sass:watch', 'scripts:watch'])
+gulp.task('watch:all', ['copy:watch', 'sass:watch', 'scripts:watch', 'inlinesvg:watch'])
 
-gulp.task('default', gulpSequence('environment', 'clean:all', 'iconfont:main', ['copy:assets', 'sass:main', 'scripts:main'], gulpUtils.isDevelopment() ? 'watch:all' : null ))
+gulp.task('default',
+    gulpSequence(
+        'environment',
+        'clean:all',
+        ['copy:assets', 'inlinesvg:main', 'sass:main', 'scripts:main'],
+        gulpUtils.isDevelopment() ? 'watch:all' : null
+    )
+)

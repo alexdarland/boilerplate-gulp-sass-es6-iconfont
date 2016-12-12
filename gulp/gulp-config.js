@@ -16,9 +16,8 @@ module.exports.sassSrcFolder  = this.srcFolder + 'scss/'
 module.exports.sassDistFolder = this.distFolder + 'css/'
 
 module.exports.iconsSrcFolder  = this.imgSrcFolder + 'svg/'
-module.exports.iconsFontDistFolder = './src/fonts/icons/'
-module.exports.iconsSassDistFolder = '../../scss/base/'
-module.exports.iconsRelativeDistFolder = '../fonts/icons/'
+module.exports.iconsDistFolder  = ''
+module.exports.iconsFileName = 'InlineSvg.cshtml'
 
 module.exports.browserList = [
 
