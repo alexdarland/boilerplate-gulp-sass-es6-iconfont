@@ -1,0 +1,11 @@
+<ul class="product-list">
+	{{#each model}}
+        <li class="product-list__item">
+			<a class="product-tile" href="{{ url }}">
+				<h3>{{ title }}</h3>
+				<p>{{ teaser }}</p>
+				<p>{{ price }}</p>
+			</a>
+		</li>
+	{{/each}}
+</ul>

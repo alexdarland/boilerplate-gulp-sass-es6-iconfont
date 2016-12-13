@@ -10,14 +10,17 @@ require('./gulp/tasks/copy')(gulp)
 require('./gulp/tasks/sass')(gulp)
 require('./gulp/tasks/scripts')(gulp)
 require('./gulp/tasks/inlinesvg')(gulp)
+require('./gulp/tasks/views')(gulp)
+require('./gulp/tasks/connect')(gulp)
 
-gulp.task('watch:all', ['copy:watch', 'sass:watch', 'scripts:watch', 'inlinesvg:watch'])
+gulp.task('watch:views', ['views:watch-helpers', 'views:watch-partials', 'views:watch-pages'])
+gulp.task('watch:all', ['copy:watch', 'sass:watch', 'scripts:watch', 'inlinesvg:watch', 'watch:views'])
 
 gulp.task('default',
     gulpSequence(
         'environment',
         'clean:all',
-        ['copy:assets', 'inlinesvg:main', 'sass:main', 'scripts:main'],
-        gulpUtils.isDevelopment() ? 'watch:all' : null
+        ['copy:assets', 'inlinesvg:main', 'sass:main', 'scripts:main', 'views:main'],
+        gulpUtils.isDevelopment() ? ['watch:all', 'connect'] : null
     )
 )

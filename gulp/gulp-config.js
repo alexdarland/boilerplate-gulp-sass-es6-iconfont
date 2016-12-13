@@ -1,4 +1,4 @@
-"use strict"
+'use strict'
 
 module.exports.srcFolder  = 'src/'
 module.exports.distFolder = 'dist/'
@@ -15,9 +15,18 @@ module.exports.scriptsDistFolder = this.distFolder + 'js/'
 module.exports.sassSrcFolder  = this.srcFolder + 'scss/'
 module.exports.sassDistFolder = this.distFolder + 'css/'
 
+module.exports.viewsSrcFolder  = this.srcFolder + 'views/'
+module.exports.viewsDistFolder = this.distFolder + 'page/'
+
 module.exports.iconsSrcFolder  = this.imgSrcFolder + 'svg/'
 module.exports.iconsDistFolder  = ''
 module.exports.iconsFileName = 'InlineSvg.cshtml'
+
+module.exports.hbConfig = {
+	views: 'test/**/*.hbs',
+	helpers: 'test/data/helpers/*.js',
+	pages: 'test/data/pages/[^_]*.js'
+}
 
 module.exports.browserList = [
 

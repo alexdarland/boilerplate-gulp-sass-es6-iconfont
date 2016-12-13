@@ -1,0 +1,6 @@
+<h1>Standard: {{ model.headline }}</h1>
+<p>{{ model.preamble }}</p>
+
+{{#each model.content}}
+	{{> (lookup . 'view') model = model }}
+{{/each}}

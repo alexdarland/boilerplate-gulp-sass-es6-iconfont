@@ -26,4 +26,8 @@ module.exports = (gulp) => {
         return del([path.join(gulpConfig.iconsDistFolder, gulpConfig.iconsFileName)]);
     });
 
+	gulp.task('clean:views', () => {
+		return del([gulpConfig.viewsDistFolder]);
+	});
+
 };
