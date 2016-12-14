@@ -40,8 +40,6 @@ const _registerPartial = (filePath) => {
 module.exports = (opts) => {
 
 	_opts = opts
-	_registerHelpers()
-	_registerPartials()
 
 	return {
 
@@ -55,6 +53,10 @@ module.exports = (opts) => {
 			return through.obj(function (file, enc, cb) {
 
 				try {
+					if(!Object.keys(hb.partials).length) {
+						_registerHelpers()
+						_registerPartials()
+					}
 					var pageData = requireNoCache(file.path)()
 					var layout 	 = hb.partials[pageData.view];
 					var template = hb.compile(layout)

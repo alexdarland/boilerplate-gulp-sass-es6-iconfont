@@ -1,5 +1,5 @@
 <h1>Standard: {{ model.headline }}</h1>
-<p>{{ model.preamble }}</p>
+<p>{{ model.preamble }} {{>icon iconName='add' iconInline=true }}</p>
 
 {{#each model.content}}
 	{{> (lookup . 'view') model = model }}

@@ -1,31 +1,34 @@
 'use strict'
 
-module.exports.srcFolder  = 'src/'
-module.exports.distFolder = 'dist/'
+module.exports.srcFolder  = 'src'
+module.exports.distFolder = 'dist'
 
-module.exports.fontsSrcFolder  = this.srcFolder + 'fonts/'
-module.exports.fontsDistFolder = this.distFolder + 'fonts/'
+module.exports.fontsSrcFolder  = this.srcFolder + '/ui/fonts'
+module.exports.fontsDistFolder = this.distFolder + '/fonts'
 
-module.exports.imgSrcFolder  = this.srcFolder + 'img/'
-module.exports.imgDistFolder = this.distFolder + 'img/'
+module.exports.uiImgSrcFolder  = this.srcFolder + '/ui/img'
+module.exports.uiImgDistFolder = this.distFolder + '/img'
 
-module.exports.scriptsSrcFolder  = this.srcFolder + 'js/'
-module.exports.scriptsDistFolder = this.distFolder + 'js/'
+module.exports.devImgSrcFolder  = this.srcFolder + '/ui/img'
+module.exports.devImgDistFolder = this.distFolder + '/tmp/img'
 
-module.exports.sassSrcFolder  = this.srcFolder + 'scss/'
-module.exports.sassDistFolder = this.distFolder + 'css/'
+module.exports.scriptsSrcFolder  = this.srcFolder + '/ui/js'
+module.exports.scriptsDistFolder = this.distFolder + '/js'
 
-module.exports.viewsSrcFolder  = this.srcFolder + 'views/'
-module.exports.viewsDistFolder = this.distFolder + 'page/'
+module.exports.sassSrcFolder  = this.srcFolder + '/ui/scss'
+module.exports.sassDistFolder = this.distFolder + '/css'
 
-module.exports.iconsSrcFolder  = this.imgSrcFolder + 'svg/'
-module.exports.iconsDistFolder  = ''
-module.exports.iconsFileName = 'InlineSvg.cshtml'
+module.exports.viewsSrcFolder  = this.srcFolder + '/ui/views'
+module.exports.viewsDistFolder = this.distFolder + '/page'
+
+module.exports.iconsSrcFolder  = this.uiImgSrcFolder + '/svg'
+module.exports.iconsDistFolder  = this.viewsSrcFolder + '/components'
+module.exports.iconsFileName = 'inline-svg.hbs'
 
 module.exports.hbConfig = {
-	views: 'test/**/*.hbs',
-	helpers: 'test/data/helpers/*.js',
-	pages: 'test/data/pages/[^_]*.js'
+	views: this.viewsSrcFolder + '/**/*.hbs',
+	helpers: this.srcFolder + '/dev/data/helpers/*.js',
+	pages: this.srcFolder + '/dev/data/pages/[^_]*.js'
 }
 
 module.exports.browserList = [

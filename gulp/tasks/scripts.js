@@ -9,8 +9,8 @@ const buffer       = require('vinyl-buffer')
 const uglify       = require('gulp-uglify')
 const gulpSequence = require('gulp-sequence')
 
-const mainEntry = `${gulpConfig.scriptsSrcFolder}main.js`
-const src       = `${gulpConfig.scriptsSrcFolder}**/*.js`
+const mainEntry = `${gulpConfig.scriptsSrcFolder}/main.js`
+const src       = `${gulpConfig.scriptsSrcFolder}/**/*.js`
 
 let mainEntryCash
 

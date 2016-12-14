@@ -20,7 +20,8 @@ gulp.task('default',
     gulpSequence(
         'environment',
         'clean:all',
-        ['copy:assets', 'inlinesvg:main', 'sass:main', 'scripts:main', 'views:main'],
+		'inlinesvg:main',
+        ['copy:assets', 'sass:main', 'scripts:main', 'views:main'],
         gulpUtils.isDevelopment() ? ['watch:all', 'connect'] : null
     )
 )

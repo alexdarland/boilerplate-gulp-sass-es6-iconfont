@@ -1,6 +1,5 @@
 .idea
 node_modules
 dist
-src/scss/base/_icons.scss
-src/fonts/icons
-InlineSvg.cshtml
+src/ui/fonts/icons
+src/ui/views/components/inline-svg.hbs

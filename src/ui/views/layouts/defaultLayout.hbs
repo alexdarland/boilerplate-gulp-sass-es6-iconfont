@@ -3,10 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <title>{{ model.siteName }} | {{ model.title }}</title>
+	<link rel="stylesheet" href="{{ model.cssMainPath }}"/>
 </head>
 <body>
 {{#each model.content}}
 	{{> (lookup . 'view') model = model }}
 {{/each}}
+{{>inline-svg}}
+<script src="{{ model.jsMainPath }}"></script>
 </body>
 </html>

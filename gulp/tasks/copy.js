@@ -5,10 +5,10 @@ const gulpUtils    = require('../gulp-utils')
 const gulpSequence = require('gulp-sequence')
 
 const src = [
-    `${gulpConfig.srcFolder}*.html`,
-    `${gulpConfig.fontsSrcFolder}**/*`,
-    `${gulpConfig.imgSrcFolder}**/*`,
-    `!${gulpConfig.imgSrcFolder}{svg,svg/**}`
+    `${gulpConfig.srcFolder}/*.html`,
+    `${gulpConfig.fontsSrcFolder}/**/*`,
+    `${gulpConfig.uiImgSrcFolder}/**/*`,
+    `!${gulpConfig.uiImgSrcFolder}/{svg,svg/**}`
 ]
 
 module.exports = (gulp) => {

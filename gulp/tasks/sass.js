@@ -9,8 +9,8 @@ const gulpConfig   = require('../gulp-config')
 const gulpUtils    = require('../gulp-utils')
 const gulpSequence = require('gulp-sequence')
 
-const mainEntry = `${gulpConfig.sassSrcFolder}main.scss`
-const src       = `${gulpConfig.sassSrcFolder}**/*.scss`
+const mainEntry = `${gulpConfig.sassSrcFolder}/main.scss`
+const src       = `${gulpConfig.sassSrcFolder}/**/*.scss`
 
 module.exports = (gulp) => {
 
